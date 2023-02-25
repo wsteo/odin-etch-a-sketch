@@ -5,7 +5,6 @@ setSizeBtn.addEventListener('click', generateSquare);
 
 function generateSquare(e) {
     clearGrid();
-    console.log(e);
     let sizeNumber = prompt("Enter a size less than 100", 16);
     generateGrid(sizeNumber);
     activeHoveringEffect();
@@ -33,7 +32,6 @@ function clearGrid() {
 
 function activeHoveringEffect() {
     const squares = document.querySelectorAll('div.square');
-    console.log(squares);
     squares.forEach((square) => {
         square.addEventListener('mouseover', function (e) {
             this.classList.add('hovering');
