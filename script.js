@@ -5,8 +5,18 @@ setSizeBtn.addEventListener('click', generateSquare);
 
 function generateSquare(e) {
     clearGrid();
-    let sizeNumber = prompt("Enter a size less than 100", 16);
-    generateGrid(sizeNumber);
+
+    let gridSize = -1;
+
+    while (gridSize <= 0 || gridSize >= 101) {
+        gridSize = prompt("Enter a size between 1 and 100", 16);
+        if (gridSize == null)
+        {
+            return;
+        }
+    }
+
+    generateGrid(gridSize);
     activeHoveringEffect();
 }
 
